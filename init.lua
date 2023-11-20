@@ -180,6 +180,13 @@ require('lazy').setup({
   { -- go tools
     'darrikonn/vim-gofmt'
   },
+
+  {
+    'github/copilot.vim'
+  },
+  {
+    'hashrocket/vim-macdown'
+  },
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -244,6 +251,9 @@ vim.o.termguicolors = true
 -- Always keep cursor verical centered
 vim.o.scrolloff = 999
 vim.o.relativenumber = true
+
+vim.g.copilot_no_tab_map = true
+vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 
 -- [[ Basic Keymaps ]]
 
